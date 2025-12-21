@@ -22,4 +22,6 @@ fn main() {
     println!("Game is {:?}", game);
     println!("Map is {}", map.data);
     println!("Field is {:?}", game.field.get_area());
+
+    game.begin();
 }

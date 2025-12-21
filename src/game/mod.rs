@@ -1,3 +1,6 @@
+use crossterm::event::{read, Event, KeyCode, KeyEventKind};
+use crossterm::terminal::{enable_raw_mode, disable_raw_mode};
+
 #[derive(Debug)]
 pub struct Size {
     pub width: u32,
@@ -24,6 +27,34 @@ struct GameCharacter {
 pub struct Game {
     pub field: Size,
     pub level_index: u32,
+}
+
+impl Game {
+    pub fn begin(&self) {
+        enable_raw_mode().unwrap(); // raw mode — ввод без Enter
+
+        println!("Нажимай клавиши (q — выход)");
+
+        loop {
+            if let Event::Key(event) = read().unwrap() {
+                if event.kind != KeyEventKind::Press {
+                    continue;
+                }
+
+                match event.code {
+                    KeyCode::Char('q') => break,
+                    KeyCode::Char(c) => println!("Нажата клавиша: {}", c),
+                    KeyCode::Up => println!("↑"),
+                    KeyCode::Down => println!("↓"),
+                    KeyCode::Left => println!("←"),
+                    KeyCode::Right => println!("→"),
+                    _ => {}
+                }
+            }
+        }
+
+        disable_raw_mode().unwrap();
+    }
 }
 
 #[derive(Debug)]
