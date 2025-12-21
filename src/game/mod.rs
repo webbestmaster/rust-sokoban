@@ -30,6 +30,16 @@ pub struct Game {
 }
 
 impl Game {
+    // TODO: add another move type
+    pub fn move_up(&self) {
+        // try to move up character
+    }
+
+    pub fn get_state(&self) {
+        // return current state
+    }
+
+    // TODO: make separated module, and call Game's method from it
     pub fn begin(&self) {
         enable_raw_mode().unwrap(); // raw mode — ввод без Enter
 
