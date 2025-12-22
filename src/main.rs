@@ -1,27 +1,21 @@
 mod game;
 
-use game::{Game, Map, Size};
+use crate::game::{game::Game, map::Map, util::Size};
 
 fn main() {
     let game = Game {
-        field: Size {
-            height: 12,
-            width: 23,
+        map: Map {
+            size: Size {
+                width: 20,
+                height: 20,
+            },
+            data: "###\n # \n ##",
         },
         level_index: 0,
     };
 
-    let map = Map {
-        size: Size {
-            width: 12,
-            height: 12,
-        },
-        data: String::from("###\n # \n ##"),
-    };
-
     println!("Game is {:?}", game);
-    println!("Map is {}", map.data);
-    println!("Field is {:?}", game.field.get_area());
+    println!("Field is {:?}", game.map.size.get_area());
 
-    game.begin();
+    // game.begin();
 }
