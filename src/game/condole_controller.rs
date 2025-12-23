@@ -5,7 +5,7 @@ use crate::game::game::Game;
 use crate::game::util::Direction;
 
 pub struct Controller<'a> {
-    game: Option<&'a Game<'a>>,
+    pub game: &'a Game<'a>,
 }
 
 impl Controller<'_> {
@@ -28,19 +28,19 @@ impl Controller<'_> {
                     // KeyCode::Char(c) => println!("Нажата клавиша: {}", c),
                     KeyCode::Up => {
                         println!("↑");
-                        self.game.unwrap().move_character(Direction::Up);
+                        self.game.move_character(Direction::Up);
                     }
                     KeyCode::Down => {
                         println!("↓");
-                        self.game.unwrap().move_character(Direction::Down);
+                        self.game.move_character(Direction::Down);
                     }
                     KeyCode::Left => {
                         println!("←");
-                        self.game.unwrap().move_character(Direction::Left);
+                        self.game.move_character(Direction::Left);
                     }
                     KeyCode::Right => {
                         println!("→");
-                        self.game.unwrap().move_character(Direction::Right);
+                        self.game.move_character(Direction::Right);
                     }
                     _ => {}
                 }

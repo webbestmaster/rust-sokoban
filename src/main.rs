@@ -2,6 +2,7 @@ mod game;
 mod map_list;
 
 use crate::game::{game::Game, render::Render};
+use crate::game::condole_controller::Controller;
 use crate::map_list::{MAP_1};
 
 fn main() {
@@ -17,6 +18,12 @@ fn main() {
     let render = Render {};
 
     render.draw(&game);
+
+    let controller = Controller {
+        game: &game,
+    };
+
+    controller.begin();
 
     // game.begin();
 }

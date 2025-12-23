@@ -6,15 +6,16 @@ pub const MAP_1: Map = Map {
         height: 20,
         width: 20,
     },
-    start_position: Position { x: 3, y: 4 },
-    win_point_list: &[Position { x: 3, y: 4 }, Position { x: 5, y: 1 }],
+    start: Position { x: 3, y: 4 },
+    point_list: &[Position { x: 3, y: 4 }, Position { x: 5, y: 1 }],
+    item_list: &[Position { x: 3, y: 4 }, Position { x: 5, y: 1 }],
     data: "\
-#############\
-#   #   0   #\
-#   #   0   #\
-#   # @     #\
-#           #\
-#   ####    #\
-#  +     +  #\
+#############\n\
+#   #   0   #\n\
+#   #   0   #\n\
+#   # @     #\n\
+#           #\n\
+#   ####    #\n\
+#  +     +  #\n\
 #############",
 };
