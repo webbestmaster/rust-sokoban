@@ -2,10 +2,12 @@ use crossterm::event::{Event, KeyCode, KeyEventKind, read};
 use crossterm::terminal::{disable_raw_mode, enable_raw_mode};
 
 use crate::game::game::Game;
+use crate::game::render::Render;
 use crate::game::util::Direction;
 
 pub struct Controller<'a> {
     pub game: &'a Game<'a>,
+    pub render: &'a Render,
 }
 
 impl Controller<'_> {
@@ -45,6 +47,8 @@ impl Controller<'_> {
                     _ => {}
                 }
             }
+
+            self.render.draw(&self.game);
         }
 
         disable_raw_mode().unwrap();

@@ -21,6 +21,7 @@ fn main() {
 
     let controller = Controller {
         game: &game,
+        render: &render,
     };
 
     controller.begin();
