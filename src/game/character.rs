@@ -1,5 +1,6 @@
 use crate::game::util::Position;
 
+#[derive(Debug, Clone)]
 pub struct Character {
-    position: Position,
+    pub position: Position,
 }

@@ -1,4 +1,4 @@
-pub mod condole_controller;
+pub mod controller;
 pub mod game;
 pub mod util;
 pub mod character;

@@ -1,12 +1,12 @@
 mod game;
 mod map_list;
 
+use crate::game::controller::Controller;
 use crate::game::{game::Game, render::Render};
-use crate::game::condole_controller::Controller;
-use crate::map_list::{MAP_1};
+use crate::map_list::MAP_1;
 
 fn main() {
-    let game = Game {
+    let mut game = Game {
         map: MAP_1,
         level_index: 0,
     };
@@ -19,8 +19,8 @@ fn main() {
 
     render.draw(&game);
 
-    let controller = Controller {
-        game: &game,
+    let mut controller = Controller {
+        game: &mut game,
         render: &render,
     };
 
