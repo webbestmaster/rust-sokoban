@@ -23,7 +23,7 @@ impl Game<'_> {
 
     pub fn get_state(&'_ self) -> GameState<'_> {
         GameState {
-            map: self.map,
+            map: self.map.clone(),
             level_index: self.level_index,
         }
 

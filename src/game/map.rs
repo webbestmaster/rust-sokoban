@@ -1,8 +1,10 @@
 use crate::game::util::{Position, Size};
 
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Clone)]
 pub struct Map<'a> {
     pub data: &'a str,
+    pub start_position: Position,
+    pub win_point_list: &'a [Position],
     pub size: Size,
 }
 

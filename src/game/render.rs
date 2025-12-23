@@ -8,6 +8,6 @@ impl Render {
     pub fn draw(&self, game: &Game) {
         let state = game.get_state();
         
-        println!("{:?}", state);
+        print!("{}", state.map.data);
     }
 }
