@@ -7,13 +7,20 @@ pub struct Map<'a> {
     pub character: Character,
     pub point_list: &'a [Position],
     pub item_list: &'a [Position],
-    pub size: Size,
 }
 
 impl Map<'_> {
-    pub fn get_point(&self, position: Position) -> Option<char> {
+    pub fn get_size(&self) -> Size {
+        let width = (self.map.lines().next().unwrap().chars().count() + 1) as i32;
+        let height = self.map.lines().count() as i32;
+
+        Size { height, width }
+    }
+    pub fn get_char(&self, position: Position) -> Option<char> {
+        let Size { width, height } = self.get_size();
+
         self.map
             .chars()
-            .nth((position.y * self.size.width + position.x) as usize)
+            .nth((position.y * width + position.x) as usize)
     }
 }

@@ -12,7 +12,7 @@ fn main() {
     };
 
     println!("Game is {:?}", game);
-    println!("Field is {:?}", game.map.size.get_area());
+    println!("Field is {:?}", game.map.get_size());
     println!("map 1 is {:?}", MAP_1);
 
     let render = Render {};
