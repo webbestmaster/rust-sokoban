@@ -4,11 +4,11 @@ mod map_list;
 use crate::game::controller::Controller;
 use crate::game::{game::Game, render::Render};
 use crate::game::map::Map;
-use crate::map_list::MAP_1;
+use crate::map_list::MAP_0;
 
 fn main() {
     let mut game = Game {
-        map: Map::to_map(MAP_1),
+        map: Map::to_map(MAP_0),
         level_index: 0,
     };
 
