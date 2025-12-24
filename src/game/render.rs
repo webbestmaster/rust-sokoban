@@ -35,9 +35,7 @@ impl Render {
         if let Some(place) = map.get_mut((y * width + x) as usize) {
             *place = '@';
         };
-
-        // draw items
-
+        
         // draw map
         println!("{}", map.iter().collect::<String>());
     }
