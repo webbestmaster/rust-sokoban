@@ -1,6 +1,6 @@
 use crate::game::util::Position;
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Copy, Clone)]
 pub struct Character {
     pub position: Position,
 }

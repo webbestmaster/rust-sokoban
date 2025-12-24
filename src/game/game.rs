@@ -17,9 +17,6 @@ pub struct GameState {
 
 impl Game {
     pub fn move_character(&mut self, direction: Direction) {
-        // try to move the character
-        println!("game, {:?}", direction);
-
         let current_position = self.map.character.position;
 
         let delta = match direction {
@@ -39,7 +36,6 @@ impl Game {
             x: next_position.x + delta.x,
         };
 
-        // item + item is next -> stop
         let is_next_item = self.map.get_is_item_here(next_position);
         let is_next_over_item = self.map.get_is_item_here(next_over_position);
 
