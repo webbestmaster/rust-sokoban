@@ -1,12 +1,10 @@
+use std::io::stdout;
 use crate::game::game::Game;
-use std::io::{self, Write};
-
 use crate::game::util::{Position, Size};
 use crossterm::{
     execute,
     terminal::{Clear, ClearType},
 };
-use std::io::stdout;
 
 pub struct Render {}
 
