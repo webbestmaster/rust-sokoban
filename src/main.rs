@@ -3,17 +3,18 @@ mod map_list;
 
 use crate::game::controller::Controller;
 use crate::game::{game::Game, render::Render};
+use crate::game::map::Map;
 use crate::map_list::MAP_1;
 
 fn main() {
     let mut game = Game {
-        map: MAP_1,
+        map: Map::to_map(MAP_1),
         level_index: 0,
     };
 
     println!("Game is {:?}", game);
     println!("Field is {:?}", game.map.get_size());
-    println!("map 1 is {:?}", MAP_1);
+    // println!("map 1 is {:?}", MAP_1);
 
     let render = Render {};
 

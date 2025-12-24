@@ -6,7 +6,7 @@ use crate::game::render::Render;
 use crate::game::util::Direction;
 
 pub struct Controller<'a> {
-    pub game: &'a mut Game<'a>,
+    pub game: &'a mut Game,
     pub render: &'a Render,
 }
 
@@ -27,7 +27,9 @@ impl Controller<'_> {
                 }
 
                 match keyEvent.code {
-                    KeyCode::Char('c') if keyEvent.modifiers.contains(KeyModifiers::CONTROL) => break,
+                    KeyCode::Char('c') if keyEvent.modifiers.contains(KeyModifiers::CONTROL) => {
+                        break;
+                    }
                     // KeyCode::Char(c) => println!("Нажата клавиша: {}", c),
                     KeyCode::Up => {
                         println!("↑");
