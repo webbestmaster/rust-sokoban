@@ -63,10 +63,26 @@ impl Game {
                 item.x += delta.x;
                 item.y += delta.y;
             }
+            self.check_for_finish_map();
             return;
         }
 
         self.map.character.position.x += delta.x;
         self.map.character.position.y += delta.y;
+
+        self.check_for_finish_map();
+    }
+
+    pub fn check_for_finish_map(&mut self) {
+        let is_finish_map = self.map.item_list.iter().all(|position| -> bool {
+            self.map
+                .point_list
+                .iter()
+                .any(|point| point.x == position.x && point.y == position.y)
+        });
+
+        if is_finish_map {
+            self.map.map = String::from("WIN!");
+        }
     }
 }
